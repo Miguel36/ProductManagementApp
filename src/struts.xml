@@ -14,5 +14,9 @@
 		<action name="welcomeAction" class="use_cases.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
 		</action>
+		<action name="addAction" class="use_cases.AddProduct">
+			<result name="success" type="redirect">/welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -1,6 +1,7 @@
 package model.product.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -34,6 +35,25 @@ public class ProductManagementDao {
 			e.printStackTrace();
 		}
 		return productList;
+	}
+	
+	
+	public static int addProduct(Product product) {
+		int status = 0;
+		
+		try {
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement pStatement = connection.prepareStatement("INSERT INTO Product VALUES (?, ?, ?, ?)");
+			pStatement.setString(1, product.getProductId());
+			pStatement.setString(2, product.getProductName());
+			pStatement.setString(3, product.getProductCategory());
+			pStatement.setInt(4, product.getProductPrice());
+			status = pStatement.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
 	}
 	
 }
