@@ -38,6 +38,31 @@ public class ProductManagementDao {
 	}
 	
 	
+	public static Product getProductById(String productId) {
+		Product product = null;
+		
+		try {
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM Product WHERE prod_id = ?");
+			pStatement.setString(1, productId);
+			ResultSet resultSet = pStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				product = new Product(
+						resultSet.getString("prod_id"),
+						resultSet.getString("prod_name"),
+						resultSet.getString("prod_category"),
+						resultSet.getInt("prod_price")
+				);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return product;
+	}
+	
+	
 	public static int addProduct(Product product) {
 		int status = 0;
 		
@@ -48,6 +73,31 @@ public class ProductManagementDao {
 			pStatement.setString(2, product.getProductName());
 			pStatement.setString(3, product.getProductCategory());
 			pStatement.setInt(4, product.getProductPrice());
+			status = pStatement.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
+	
+	public static int updateProduct(Product product) {
+		int status = 0;
+		
+		try {
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement pStatement = connection.prepareStatement(
+					"UPDATE Product SET prod_name = ?,"
+					+ " prod_category = ?,"
+					+ " prod_price = ?"
+					+ " WHERE prod_id = ?"
+			);
+			pStatement.setString(1, product.getProductName());
+			pStatement.setString(2, product.getProductCategory());
+			pStatement.setInt(3, product.getProductPrice());
+			pStatement.setString(4, product.getProductId());
+			
 			status = pStatement.executeUpdate();
 		}
 		catch (Exception e) {

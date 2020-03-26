@@ -18,5 +18,13 @@
 			<result name="success" type="redirect">/welcomeAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="updateDataAction" class="use_cases.UpdateDataForm">
+			<result name="success">/updateProduct.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="updateAction" class="use_cases.UpdateProduct">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 </struts>

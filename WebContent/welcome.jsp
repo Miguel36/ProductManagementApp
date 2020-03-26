@@ -35,7 +35,11 @@
 					<td><s:property value="#product.productName" /></td>
 					<td><s:property value="#product.productCategory" /></td>
 					<td><s:property value="#product.productPrice" /></td>
-					<td>Update</td>
+					<td>
+						<a href="updateDataAction?productId=<s:property value="#product.productId" />">
+							<button class="actionBtn">Update</button>
+						</a>
+					</td>
 					<td>Delete</td>
 				</tr>
 			</s:iterator>
