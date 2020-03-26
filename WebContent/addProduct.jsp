@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add New Product</title>
+<s:head/>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

@@ -17,6 +17,7 @@
 		<action name="addAction" class="use_cases.AddProduct">
 			<result name="success" type="redirect">/welcomeAction</result>
 			<result name="error">/error.jsp</result>
+			<result name="input">/addProduct.jsp</result>
 		</action>
 		<action name="updateDataAction" class="use_cases.UpdateDataForm">
 			<result name="success">/updateProduct.jsp</result>
@@ -25,6 +26,7 @@
 		<action name="updateAction" class="use_cases.UpdateProduct">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="error">/error.jsp</result>
+			<result name="input">/updateProduct.jsp</result>
 		</action>
 		<action name="deleteAction" class="use_cases.DeleteProduct">
 			<result name="success" type="redirect">welcomeAction</result>
