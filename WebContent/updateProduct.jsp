@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Update Product</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 			<s:textfield name="productName" label="Product Name" class="formTextField" />
 			<s:textfield name="productCategory" label="Product Category" class="formTextField" />
 			<s:textfield name="productPrice" label="Product Price" class="formTextField" />
-			<s:submit value="Update Product" class="actionBtn"></s:submit>
+			<s:submit value="Update" class="actionBtn"></s:submit>
 		</s:form>
 	</div>
 

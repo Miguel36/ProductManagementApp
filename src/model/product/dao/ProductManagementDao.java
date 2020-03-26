@@ -106,4 +106,20 @@ public class ProductManagementDao {
 		return status;
 	}
 	
+	
+	public static int deleteProduct(String productId) {
+		int status = 0;
+		
+		try {
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement pStatement = connection.prepareStatement("DELETE FROM Product WHERE prod_id = ?");
+			pStatement.setString(1, productId);
+			status = pStatement.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
 }

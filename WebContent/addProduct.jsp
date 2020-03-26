@@ -17,7 +17,7 @@
 			<s:textfield name="productName" label="Product Name" class="formTextField"></s:textfield>
 			<s:textfield name="productCategory" label="Product Category" class="formTextField"></s:textfield>
 			<s:textfield name="productPrice" label="Product Price" class="formTextField"></s:textfield>
-			<s:submit value="Add Product" class="actionBtn"></s:submit>
+			<s:submit value="Add" class="actionBtn"></s:submit>
 		</s:form>
 	</div>
 

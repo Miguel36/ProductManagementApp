@@ -26,5 +26,9 @@
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="deleteAction" class="use_cases.DeleteProduct">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 </struts>
