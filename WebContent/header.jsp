@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<%
+		if (session.getAttribute("loggedinUser") == null) {
+			response.sendRedirect("login.jsp");
+		}
+	%>
 	
 	<div class="topnav">
 	  <a href="welcomeAction">Home</a>

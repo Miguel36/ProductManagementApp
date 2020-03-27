@@ -7,6 +7,14 @@
 
 <struts>
 	<package name="productManagementApp" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="model.interceptors.LoginInterceptor" />
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
 		<action name="loginAction" class="use_cases.LoginUser">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>	
@@ -16,6 +24,7 @@
 		</action>
 		<action name="welcomeAction" class="use_cases.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
+			<result name="input">/login.jsp</result>
 		</action>
 		<action name="addAction" class="use_cases.AddProduct">
 			<result name="success" type="redirect">/welcomeAction</result>
