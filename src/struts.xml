@@ -11,6 +11,9 @@
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>	
 		</action>
+		<action name="logoutAction" class="use_cases.LogoutUser">
+			<result name="input">/login.jsp</result>	
+		</action>
 		<action name="welcomeAction" class="use_cases.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
 		</action>
